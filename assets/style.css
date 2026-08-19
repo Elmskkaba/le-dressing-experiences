@@ -1389,3 +1389,367 @@ img,video,svg,canvas{max-width:100%;}
   .editorial-intro-title h2{font-size:clamp(34px,10.5vw,44px);}
   .fashion-grid{grid-template-rows:430px 290px 360px 250px;}
 }
+/* ===== V8.3 — mobile image display + stronger responsiveness ===== */
+
+/* sécurité globale */
+img{
+  max-width:100%;
+  display:block;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+/* petites marges mobile plus propres */
+@media (max-width: 560px){
+  .wrap{
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
+
+/* ---------------------------------
+   HOME
+--------------------------------- */
+
+/* bande horizontale plus propre */
+.brand-strip{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.brand-strip::-webkit-scrollbar{
+  display:none;
+}
+.brand-strip-track{
+  width:max-content;
+  min-width:100%;
+}
+
+@media (max-width: 560px){
+  .brand-strip-track{
+    min-height:52px;
+    padding:0 16px;
+    gap:14px;
+    font-size:12px;
+  }
+
+  .home-v3 .editorial-hero{
+    padding:118px 16px 40px;
+    background-position:60% center;
+  }
+
+  .hero-bottomline{
+    max-width:100%;
+  }
+
+  .hero-bottomline .hero-ctas{
+    width:100%;
+  }
+
+  .btn-solid,
+  .btn-ghost{
+    width:100%;
+    text-align:center;
+  }
+
+  /* cartes images accueil : plus harmonieuses */
+  .fashion-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+    gap:10px;
+  }
+
+  .fashion-tile-main,
+  .fashion-tile-event,
+  .fashion-tile-image,
+  .fashion-tile-hospitality{
+    grid-column:1 !important;
+    width:100%;
+  }
+
+  .fashion-tile-main{
+    grid-row:auto !important;
+    aspect-ratio:4 / 5;
+  }
+
+  .fashion-tile-event{
+    grid-row:auto !important;
+    aspect-ratio:4 / 5;
+  }
+
+  .fashion-tile-image{
+    grid-row:auto !important;
+    aspect-ratio:4 / 5;
+  }
+
+  .fashion-tile-hospitality{
+    grid-row:auto !important;
+    aspect-ratio:4 / 3;
+    min-height:280px;
+  }
+
+  .fashion-tile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .fashion-tile-main img{
+    object-position:center 35%;
+  }
+
+  .fashion-tile-event img{
+    object-position:center 35%;
+  }
+
+  .fashion-tile-image img{
+    object-position:center 20%;
+  }
+
+  .fashion-tile-caption{
+    left:18px;
+    right:18px;
+    bottom:18px;
+  }
+
+  .fashion-tile-caption h3{
+    font-size:28px;
+  }
+}
+
+/* ---------------------------------
+   UNIVERS
+--------------------------------- */
+
+@media (max-width: 860px){
+  .uv4-index{
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+
+  .uv4-index::-webkit-scrollbar{
+    display:none;
+  }
+
+  .uv4-index-inner{
+    width:max-content;
+    min-width:100%;
+    display:flex;
+  }
+
+  .uv4-index a{
+    flex:0 0 auto;
+  }
+}
+
+@media (max-width: 560px){
+  .uv4-hero-inner{
+    padding-top:114px;
+    padding-bottom:34px;
+  }
+
+  .uv4-hero{
+    min-height:92svh;
+  }
+
+  .uv4-hero-photo{
+    background-position:center 24%;
+  }
+
+  .uv4-index{
+    top:57px;
+  }
+
+  .uv4-index-inner{
+    min-width:620px;
+    min-height:58px;
+  }
+
+  .uv4-index-label{
+    width:68px;
+    flex:0 0 68px;
+    padding-left:16px;
+  }
+
+  .uv4-index a{
+    min-width:145px;
+    padding:0 10px;
+    font-size:8px;
+  }
+
+  /* images pleine largeur au lieu de 72% / 76% */
+  .uv4-mode-detail,
+  .uv4-event-landscape,
+  .uv4-event-portrait,
+  .uv4-image-main,
+  .uv4-image-secondary{
+    width:100% !important;
+    justify-self:stretch !important;
+  }
+
+  .uv4-mode-layout{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .uv4-mode-main,
+  .uv4-mode-copy,
+  .uv4-mode-detail{
+    grid-column:1 !important;
+  }
+
+  .uv4-mode-main img{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+    object-position:center 34%;
+  }
+
+  .uv4-mode-detail{
+    grid-row:auto !important;
+  }
+
+  .uv4-mode-detail img{
+    width:100%;
+    aspect-ratio:4 / 3;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .uv4-experience-hero{
+    height:68svh;
+    min-height:460px;
+  }
+
+  .uv4-experience-hero > img{
+    object-position:center 30%;
+  }
+
+  .uv4-experience-body{
+    grid-template-columns:1fr;
+    gap:20px;
+    padding-top:48px;
+  }
+
+  .uv4-event-landscape,
+  .uv4-event-portrait{
+    grid-column:1 !important;
+    margin-top:0 !important;
+  }
+
+  .uv4-event-landscape img{
+    width:100%;
+    aspect-ratio:4 / 3;
+    object-fit:cover;
+  }
+
+  .uv4-event-portrait img{
+    width:100%;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+    object-position:center 18%;
+  }
+
+  .uv4-image-gallery{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .uv4-image-main,
+  .uv4-image-secondary,
+  .uv4-image-note{
+    grid-column:1 !important;
+  }
+
+  .uv4-image-main img{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+    object-position:center 22%;
+  }
+
+  .uv4-image-secondary img{
+    width:100%;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+    object-position:center 18%;
+  }
+
+  .uv4-hospitality-visual{
+    aspect-ratio:1 / 1.05;
+  }
+}
+
+/* ---------------------------------
+   EXCELLENCE EDIT
+--------------------------------- */
+
+@media (max-width: 820px){
+  .ex5-community-main,
+  .ex5-community-secondary{
+    width:100% !important;
+    justify-self:stretch !important;
+  }
+
+  .ex5-community-main img,
+  .ex5-community-secondary img{
+    width:100%;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+  }
+}
+
+@media (max-width: 560px){
+  .ex5-detail-strip{
+    grid-template-columns:repeat(4, 82vw);
+  }
+
+  .ex5-community-secondary{
+    margin-top:0;
+  }
+
+  .ex5-next{
+    min-height:72svh;
+  }
+
+  .ex5-next-photo{
+    background-position:60% center;
+  }
+}
+
+/* ---------------------------------
+   CONTACT / sections générales
+--------------------------------- */
+
+@media (max-width: 560px){
+  .contact-grid{
+    gap:28px;
+    padding-top:48px;
+    padding-bottom:90px;
+  }
+
+  .c-card{
+    padding:22px 18px;
+  }
+
+  .page-hero{
+    padding-top:126px;
+    padding-bottom:54px;
+  }
+
+  .page-hero h1{
+    font-size:clamp(36px, 12vw, 56px);
+    line-height:1.02;
+  }
+
+  .page-hero p{
+    font-size:14px;
+    line-height:1.75;
+  }
+}
