@@ -1292,3 +1292,100 @@ footer{padding-top:70px;}
 .error-page h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,10vw,120px);line-height:.86;letter-spacing:-.05em;margin:22px 0 28px;}
 .error-page h1 em{font-weight:300;color:var(--gold);}
 .error-page-main p:not(.eyebrow){max-width:520px;margin:0 auto 34px;color:#a3978b;line-height:1.85;}
+
+/* ===== V8.2 MOBILE RESPONSIVE REPAIR ===== */
+html,body{max-width:100%;}
+main,section,footer,header,nav,.wrap{max-width:100%;}
+img,video,svg,canvas{max-width:100%;}
+
+@media(max-width:860px){
+  html,body{overflow-x:hidden;}
+  @supports (overflow:clip){html,body{overflow-x:clip;}}
+
+  /* Mobile menu is now a viewport-level layer (outside the blurred header). */
+  .mobile-menu{
+    position:fixed;inset:0;width:100%;height:100dvh;min-height:100svh;
+    padding:calc(72px + env(safe-area-inset-top)) 24px calc(34px + env(safe-area-inset-bottom));
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;
+    overflow-y:auto;overscroll-behavior:contain;background:rgba(20,16,13,.985);
+    transform:translate3d(0,-105%,0);opacity:0;visibility:hidden;pointer-events:none;
+    transition:transform .42s cubic-bezier(.2,.7,.2,1),opacity .25s ease,visibility 0s linear .42s;
+    z-index:1000;
+  }
+  .mobile-menu.open{
+    transform:translate3d(0,0,0);opacity:1;visibility:visible;pointer-events:auto;
+    transition:transform .42s cubic-bezier(.2,.7,.2,1),opacity .25s ease,visibility 0s;
+  }
+  .mobile-menu a{max-width:100%;font-family:'Fraunces',serif;font-size:clamp(28px,8.6vw,40px);line-height:1.04;overflow-wrap:anywhere;}
+  .mobile-menu .navcta{
+    display:inline-flex !important;width:auto;max-width:100%;padding:13px 17px;margin-top:10px;
+    font-family:'Jost',sans-serif;font-size:10px;line-height:1.2;letter-spacing:.13em;white-space:normal;
+  }
+  .mobile-menu-close{top:calc(22px + env(safe-area-inset-top));right:22px;}
+
+  nav{width:100%;min-width:0;gap:14px;}
+  .wordmark-logo{min-width:0;flex:0 1 auto;}
+  .wordmark-logo img{max-width:min(178px,56vw);height:auto;max-height:28px;object-fit:contain;object-position:left center;}
+  .hamburger{flex:0 0 30px;width:30px;}
+
+  /* The editorial ribbon scrolls by itself instead of widening the whole page. */
+  .brand-strip{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .brand-strip::-webkit-scrollbar{display:none;}
+  .brand-strip-track{width:max-content;min-width:max-content;max-width:none;padding-left:20px;padding-right:20px;}
+
+  .editorial-hero-inner,.editorial-intro,.section-line-head,.fashion-grid,.signature-feature,
+  .founder-editorial-grid,.uv4-hero-inner,.uv4-statement,.uv4-chapter-head,.uv4-mode-layout,
+  .uv4-experience-body,.uv4-image-head,.uv4-image-gallery,.uv4-hospitality-grid,.ex5-detail-strip,
+  .fv6-manifesto-grid,.fv6-section-head,.fv6-method-grid,.fv6-pillars-head,.fv6-profile-grid,
+  .cv7-intro-grid,.cv7-section-head,.cv7-request-grid,.f-top{min-width:0;}
+
+  .fashion-tile,.signature-photo,.signature-panel,.founder-image-wrap,.uv4-mode-main,.uv4-mode-copy,
+  .uv4-mode-detail,.uv4-event-landscape,.uv4-event-portrait,.uv4-image-main,.uv4-image-secondary,
+  .uv4-image-note,.cv7-hero-copy,.cv7-hero-media,.cv7-request-aside,.cv7-form{min-width:0;max-width:100%;}
+
+  .cv7-direct{grid-template-columns:86px minmax(0,1fr);}
+  .cv7-direct a,.cv7-direct strong{min-width:0;overflow-wrap:anywhere;word-break:break-word;}
+}
+
+@media(max-width:560px){
+  .wrap{padding-left:20px;padding-right:20px;}
+  nav{padding:14px 20px;}
+  .wordmark-logo img{max-width:155px;max-height:25px;}
+
+  .home-v3 .editorial-hero{padding-left:20px;padding-right:20px;}
+  .editorial-hero h1{font-size:clamp(50px,16.6vw,72px);line-height:.88;letter-spacing:-.04em;}
+  .hero-kicker{max-width:100%;flex-wrap:wrap;row-gap:8px;}
+  .hero-bottomline{max-width:100%;}
+  .hero-bottomline .hero-sub{max-width:100%;font-size:13.5px;line-height:1.7;}
+  .hero-index{max-width:100%;}
+
+  .brand-strip-track{gap:18px;font-size:12.5px;min-height:54px;}
+  .editorial-intro{padding-top:72px;padding-bottom:76px;}
+  .editorial-intro-title h2{font-size:clamp(36px,10.8vw,48px);line-height:1.05;}
+  .editorial-intro-copy p{font-size:13.5px;line-height:1.82;}
+
+  .fashion-grid{grid-template-rows:470px 320px 390px 270px;}
+  .fashion-tile-caption h3{font-size:30px;}
+  .signature-photo{min-height:420px;}
+  .signature-panel h2{font-size:clamp(48px,14vw,66px);}
+  .founder-editorial-copy h2{font-size:clamp(44px,14vw,62px);}
+
+  .cv7-hero-copy{padding-left:20px;padding-right:20px;}
+  .cv7-hero h1{font-size:clamp(52px,16vw,72px);}
+  .cv7-service{padding-left:20px;padding-right:20px;}
+  .cv7-direct{grid-template-columns:1fr;gap:6px;}
+  .cv7-form-footer{gap:18px;}
+
+  footer{padding-top:64px;}
+  .f-top{gap:30px;}
+}
+
+@media(max-width:390px){
+  .wrap{padding-left:16px;padding-right:16px;}
+  nav{padding-left:16px;padding-right:16px;}
+  .wordmark-logo img{max-width:142px;}
+  .mobile-menu{padding-left:20px;padding-right:20px;}
+  .editorial-hero h1{font-size:clamp(47px,16.4vw,64px);}
+  .editorial-intro-title h2{font-size:clamp(34px,10.5vw,44px);}
+  .fashion-grid{grid-template-rows:430px 290px 360px 250px;}
+}
